@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+		<link rel="stylesheet" href="font.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal" >
+			<div class="slides">
+				<section>
+					<div>
+						<h3 style='text-align:left;margin-left:16%;margin-bottom:0px;'><bc>05/14/2021</bc></h3>
+						<h1 style='text-align:center;margin-bottom:0px;margin-top:0px;'>Effective Work Environments</h1>
+						<h3 style='text-align:right;margin-right:16%;margin-top:0px'><bc>Isaac Wolf</bc></h3>
+					</div>
+				</section>
+				
+				<section>
+					<h1>Overview</h1>
+					<li>Tools</li>
+					<li>Editor</li>
+				</section>
+
+				<section>
+					<section><h1>Tools</h1></section>
+					
+					<section>
+
+						<h2>Tools: <bc>No Brainers</bc></h2>
+						
+						<li class='fragment'>Terminal tools </li>
+						<ul>
+							<li class='fragment'> 
+								<a href="https://ohmyz.sh/">zsh</a> - better shell, jam packed with tons of great default features
+							</li>
+							<li  class='fragment'>Tmux, screen, terminator, CMDER</li>
+						</ul>
+						<li class='fragment'>Improvements </li>
+						<ul>
+							<div class='fragment'>
+								<li><a href="https://github.com/BurntSushi/ripgrep">ripgrep</a> - better grep</li>
+								<ul><li> Warning - ignores <icode>.gitignore</icode> files by default!</li></ul>
+								
+								<pre><code class='bash' data-trim data-noescape>
+									grep -r "surrogate.*comp" 
+									rg "surrogate.*comp"
+								</code></pre>
+							</div>
+								
+						<li class='fragment'><a href="https://github.com/sharkdp/fd">fd</a> - better find 
+						<pre><code class='bash'  data-trim data-noescape>
+							find . -iname "effectiveenv*" # or find . -name "EffectiveEnv*"
+							fd effectiveenv
+						</code></pre>
+
+						</li>
+							<li class='fragment' data-notes='j -s j -h'><a href="https://github.com/wting/autojump">autojump</a> - what you alway wished <icode>cd</icode> was</li>
+							<li class='fragment' data-notes='CTRL-R, CTRL-T, ALT-C'><a href="https://github.com/junegunn/fzf">fzf</a> - search for when you're a bit <em>fuzzy</em> on what you're looking for</li>
+							<li class='fragment'><a href="https://github.com/sharkdp/bat">bat</a> - a <icode>cat</icode> clone with wings!</li>
+						</ul>
+
+					</section>
+
+					<section>
+						<h2>Tools: <bc>Require a little more work...</bc></h2>
+						<li>Window managers</li>
+							<ul>
+								<li>I3</li>
+								<li>Regolith</li>
+							</ul>
+						<li>Dotfile sync - managed and <a href='https://github.com/iiwolf/dotfiles'>share</a> your system configuration!</li>
+					</section>
+
+					<section>
+						<h2>Misc Tips</h2>
+						<li class='fragment'>Chaining commands with <icode>exec</icode> and <icode>$(...)</icode></li>
+						<ul>
+							<li class='fragment'><icode>fzf git log</icode></li>
+							<li class='fragment'><icode>wc -l $(fd opt.csv)</icode></li>
+						</ul>
+						<li class='fragment'>Master your <icode>git</icode> workflow!</li>
+
+					</section>
+
+					<section>
+						<h2>Don’t see what you’re looking for?</h2>
+						<li>These are just some examples that I find very useful, next time you’re “in the field”, think <br>about what tools could make your life better:</li>
+						<ul>
+							<li>“It would be cool <bc>if I could ______ </bc>“</li>
+							<li>“This is going to take forever, <bc>I wish I could just _______”</bc></li>
+							<li>“Ugh, now I’m going to have to do that again, <bc>I wonder if there’s a way to _______"</bc></li>
+						</ul>
+						<li>Chances are, there’s a tool for that!</li>
+						<ul>
+							<li>If not, there’s a <bc>chain of tools</bc> that you could use, <bc>turn into a function</bc>, and use to make your life easier.</li>
+							<li>If you don’t want to figure it out right now, <bc>start keeping a list</bc> of things you’d like to research for later</li>
+						</ul>
+
+
+					</section>
+
+				</section>
+
+				<section>
+					<section><h1>Editor</h1></section>
+
+					<section style='text-align:center;width:auto;height:auto;'
+						data-notes="Extensions\n keybindings, debugging, remote capability">
+						<h1 class='r-fit-text'  style='font-size:280pt'><bc>VSCode!</bc></h1>
+						<h2 class="r-fit-text">Microsoft does something <bc>very</bc> right</h2>
+					</section>
+					
+					<section>
+						<h3>VSCode Setup</h3>
+						<li><c>Workspaces</c> - contains project specific settings </li>
+						<ul>
+							<li>Applicable folders - Defines search space (CTRL+X+F)</li>
+							<li>Language</li>
+							<li>Debugger</li>
+							<li>Default toolchain for any other operations</li>
+						</ul>	
+						<li><c>Keybindings</c> (keyboard shorcuts)</li>
+						<ul>
+							<li>Navigating Workspace: splitting windows, switching windows, jumping, opening sidebar</li>
+							<li>Navigating File: searching, find-and-replace, jumping blocks, goto line</li>
+						</ul>
+						<li><c>Extensions</c></li>
+						<ul>
+							<li>Everything else!</li>
+						</ul>
+						
+					</section>
+					<section>
+						<h3>VSCode extension recommendations</h3>
+						<ul>
+
+							<div class='fragment'>
+								<li>Workflow Support </li>
+								<ul>
+									<li>Your favorite keybinding package (e.g. <b style='color:darkviolet'>Emacs</b> or <b style='color:darkgreen'>Vim</b>)</li>
+									<li data-notes="Show Gondor connection, download"><c>Remote</c> - ssh, WSL, and even containers</li>
+								</ul>
+							</div>
+
+							<div class='fragment'>
+								<li>Tool Support </li>
+									<ul>
+										<li><c>GitLens</c> - Git supercharged</li>
+										<li><c>Excel Viewer</c> - view csv's</li>
+										<li><c>CMake</c> - compile, intellisense, etc.</li>
+										<li><c>Markdown All in One</c> - intellisense, preview, etc.</li>
+										<li><c>LaTeX Workshop</c> - compile, intellisense, preview, etc.</li>
+										<li><c>Docker</c> - Create, manager, and debug containers</li>
+
+									</ul>
+							</div>
+							<div class='fragment'>
+								<li>Language Support </li>
+								<ul>
+									<li><c>Python</c> - Pylance, Python Docstring Generator</li>
+									<li><c>C/C++</c> - C/C++ Intellisense</li>
+									<li><c>Fortran</c> - Modern Fortran</li>
+									<li>...</li>
+								</ul>
+							</div>
+
+
+						</ul>
+					</section>
+
+				</section>
+			<!-- </div> -->
+			<!-- <div class="slides" style='width:100%; height:100%;'> -->
+
+				<section style='margin-left:0px;'>
+					<section><h3>Windows...</h3></section>
+					<section>
+						<div class="container" style='align-content: top'>
+
+							<!-- Text/code column -->
+							<div class="col">
+								<div class="fragment" data-fragment-index='1'>
+									<li >Windows 7 - <bc>Terminal Emulators</bc></li>
+									<ul>
+										<li>Cygwin, MSYS2, Git Bash, CMDER</li>
+										<li>I use MSYS2 in VSCode for all my Windows development.</li>
+										<ul><li>Navigation, Git workflow, building, debugging, executing</li></ul>
+									</ul>
+								</div>
+								<div class="fragment" data-fragment-index='2'>
+									<li>Windows 10 - <bc>WSL!</bc></li>
+									<ul>
+										<li>Windows Subsystem for Linux </li>
+										<li class='fragment strike'>Once we have Windows 10, I will use this exclusively!</li>
+										<li class='fragment'>WSL2 is really nice. You can run a whole Regolith build from it effictively</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="col" style='flex:2;'>
+								<img src='images/VSCode.PNG' class='fragment' data-fragment-index='1'>
+							</div>
+						</div>
+
+					</section>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				width:"100%",
+				height:"100%",
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>

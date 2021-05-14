@@ -1,0 +1,155 @@
+/**
+ * White theme for reveal.js. This is the opposite of the 'black' theme.
+ *
+ * By Hakim El Hattab, http://hakim.se
+ */
+ @import url(./fonts/source-sans-pro/source-sans-pro.css);
+
+ /*********************************************
+  * GLOBAL STYLES
+  *********************************************/
+
+ .reveal {
+   font-family: "Source Sans Pro", Helvetica, sans-serif;
+   font-size: 48px;
+   font-weight: normal;
+ }
+
+
+ .reveal .slides section,
+ .reveal .slides section > section {
+   line-height: 1.3;
+   font-weight: inherit; 
+   /* overflow-y: scroll !important; */
+   text-align:left;
+   margin-left:2%;
+ }
+ 
+ /*********************************************
+  * HEADERS
+  *********************************************/
+ .reveal h1,
+ .reveal h2,
+ .reveal h3,
+ .reveal h4,
+ .reveal h5,
+ .reveal h6 {
+   margin: 0 0 20px 0;
+   font-family: "Source Sans Pro", Helvetica, sans-serif;
+   font-weight: 600;
+   line-height: 1.2;
+   letter-spacing: normal;
+   text-transform: uppercase;
+   text-shadow: none;
+   word-wrap: break-word; }
+ 
+ .reveal h1 {
+   font-size: 2.5em; 
+ }
+ 
+ .reveal h2 {
+   font-size: 1.6em; }
+ 
+ .reveal h3 {
+   font-size: 1.3em; 
+ }
+ 
+ .reveal h4 {
+   font-size: 1em; 
+   font-weight: 400;
+ }
+ 
+ .reveal h1 {
+   text-shadow: none; }
+ 
+ /*********************************************
+  * OTHER
+  *********************************************/
+ .reveal p {
+   margin: 20px 0;
+   line-height: 1.3; }
+ 
+ /* Remove trailing margins after titles */
+ .reveal h1:last-child,
+ .reveal h2:last-child,
+ .reveal h3:last-child,
+ .reveal h4:last-child,
+ .reveal h5:last-child,
+ .reveal h6:last-child {
+   margin-bottom: 0; }
+ 
+ /* Ensure certain elements are never larger than the slide itself */
+ .reveal img,
+ .reveal video,
+ .reveal iframe {
+   max-width: 95%;
+   max-height: 95%; }
+ 
+ .reveal strong,
+ .reveal b {
+   font-weight: bold; }
+ 
+
+ .reveal em {
+   font-style: italic; }
+ 
+ .reveal ol,
+ .reveal dl,
+ .reveal ul {
+   display: inline-block;
+   text-align: left;
+   margin: 0 0 0 1em; }
+ 
+ .reveal ol {
+   list-style-type: decimal; }
+ 
+ .reveal ul {
+   list-style-type: disc; 
+   font-size:80%;
+   margin-bottom: 10px;
+ }
+ 
+ .reveal li {
+   margin-left:50px;
+ }
+ .reveal ul ul {
+   list-style-type: square; }
+ 
+ .reveal ul ul ul {
+   list-style-type: circle; }
+
+  icode {
+    font-size: 70%;
+    font-family: monospace;
+    text-transform: none; 
+    background-color:#272822;
+    padding:5px;
+    /* border: 1px solid white; */
+    border-radius:2px;
+  }
+  
+  .container{
+    display: flex;
+    height:100%;
+    /* border:1px solid green; */
+  }
+  .col{
+    flex: 1;
+    height:100%;
+    margin:auto;
+    /* border:1px solid red; */
+  }
+
+  img{
+    box-shadow: 0px 10px 5px 5px rgba(0, 0, 0, 0.15); 
+  }
+
+  bc {
+    font-weight: bold; 
+    color:#42affa;
+  }
+
+  c {
+    color:#42affa;
+  }
+  
