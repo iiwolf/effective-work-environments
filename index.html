@@ -19,7 +19,7 @@
 			<div class="slides">
 				<section>
 					<div>
-						<h3 style='text-align:left;margin-left:16%;margin-bottom:0px;'><bc>05/14/2021</bc></h3>
+						<h3 style='text-align:left;margin-left:16%;margin-bottom:0px;'><bc>05/21/2021</bc></h3>
 						<h1 style='text-align:center;margin-bottom:0px;margin-top:0px;'>Effective Work Environments</h1>
 						<h3 style='text-align:right;margin-right:16%;margin-top:0px'><bc>Isaac Wolf</bc></h3>
 					</div>
@@ -45,6 +45,7 @@
 							</li>
 							<li  class='fragment'>Tmux, screen, terminator, CMDER</li>
 						</ul>
+						
 						<li class='fragment'>Improvements </li>
 						<ul>
 							<div class='fragment'>
@@ -55,13 +56,29 @@
 									grep -r "surrogate.*comp" 
 									rg "surrogate.*comp"
 								</code></pre>
+
+								<pre><code class='bash' data-trim data-noescape>
+									grep -r delta --include \*.cpp --include \*.h
+									rg delta -t cpp
+								</code></pre>
+
 							</div>
 								
 						<li class='fragment'><a href="https://github.com/sharkdp/fd">fd</a> - better find 
-						<pre><code class='bash'  data-trim data-noescape>
-							find . -iname "effectiveenv*" # or find . -name "EffectiveEnv*"
-							fd effectiveenv
-						</code></pre>
+
+							<pre><code class='bash'  data-trim data-noescape>
+								find . -iname "effectiveenv*" # or find . -name "EffectiveEnv*"
+								fd effectiveenv
+							</code></pre>
+							
+							<!-- Example: use manpages you fool! -->
+							<pre><code class='bash' data-trim data-noescape data-line-numbers="1|2|3|4|5">
+								fd -I results.csv
+								fd --help
+								fd --help | rg symlink
+								fd --help | rg symlink --context 4
+								fd -IL results.csv
+							</code></pre>
 
 						</li>
 							<li class='fragment' data-notes='j -s j -h'><a href="https://github.com/wting/autojump">autojump</a> - what you alway wished <icode>cd</icode> was</li>
@@ -71,6 +88,22 @@
 
 					</section>
 
+					<section>
+
+						<h2>Tools: <bc>Python!</bc></h2>
+						
+						<li class='fragment'>Few Quick Notes </li>
+						<ul>
+							<li class='fragment'> 
+								<a href="https://bpython-interpreter.org/">bpython</a> - better Python repl, also jam packed with tons of great features
+							</li>
+							<li class='fragment'> 
+								<a href="https://github.com/prompt-toolkit/ptpython">ptpython</a> - similar idea, I'm not familiar with it
+							</li>
+							<li  class='fragment'>~/.startup.py - setup your common imports</li>
+						</ul>
+						
+					</section>
 					<section>
 						<h2>Tools: <bc>Require a little more work...</bc></h2>
 						<li>Window managers</li>
@@ -86,10 +119,30 @@
 						<li class='fragment'>Chaining commands with <icode>exec</icode> and <icode>$(...)</icode></li>
 						<ul>
 							<li class='fragment'><icode>fzf git log</icode></li>
+							<ul><li class='fragment'>Even better! <icode>git-commit-show</icode></li></ul>
 							<li class='fragment'><icode>wc -l $(fd opt.csv)</icode></li>
 						</ul>
 						<li class='fragment'>Master your <icode>git</icode> workflow!</li>
-
+						<pre class='fragment'><code class='bash' data-trim data-noescape>
+								1	1607  14.5746%     git
+								2	1355  12.2891%     code
+								3	953   8.64321%     ls
+								4	945   8.57065%     rg
+								5	884   8.01741%     cd
+								6	691   6.26701%     python
+								7	590   5.35099%     rm
+								8	531   4.81589%     mv
+								9	346   3.13804%     fd
+								10	330   2.99293%     cp
+						</code></pre>
+						<ul>
+							<li class='fragment'>commit</li>
+							<li class='fragment'>checkout</li>
+							<li class='fragment'>pull</li>
+							<li class='fragment'>push</li>
+							<li class='fragment'>log</li>
+							<li class='fragment'>stash</li>
+						</ul>
 					</section>
 
 					<section>
